@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Gerson Aduviri</title>
+	<link rel="stylesheet" href="css/foundation.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/foundation.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 </head>
 <body>
-	<h1>Gerson Aduviri</h1>
-	<img src="img/perfil.jpg" alt="Gerson" style="width:100px; margin-right:10px;" align="left">
-	<p>Hola!, Soy yo.</p>
+
+<div class="header">
+	<ul class="main-nav">
+		<li><a href="#about_mi">Sobre mi</a></li>
+		<li><a href="#intereses">Mis intereses</a></li>
+		<li><a href="#contacto">Contactame</a></li>
+	</ul>
+</div>
+
+<div class="slider">
+	<h1>Hola!</h1>
+	<p>Soy un desarrollador</p>
+</div>
+
+<div>
+	<div class="row">
+
+	</div>
+</div>
+
+<div class="photos">
+	<div class="row">
+		<h2>Mis fotos</h2>
+		<ul class="list-photos">
+			<li><a href="https://flic.kr/p/5KrQhy"><img src="https://farm4.staticflickr.com/3065/3117076632_d857a4912e_q.jpg" alt=""></a></li>
+			<li><a href="https://flic.kr/p/67GDYz"><img src="https://farm4.staticflickr.com/3647/3357615045_5c01b6530c_q.jpg" alt=""></a></li>
+			<li><a href="https://flic.kr/p/5KrQhy"><img src="https://farm4.staticflickr.com/3065/3117076632_d857a4912e_q.jpg" alt=""></a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- Filtros -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800">
+	<defs>
+		<filter id="goo">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+			<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"/>
+			<feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+		</filter>
+	</defs>
+</svg>
+
 </body>
 </html>
