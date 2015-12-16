@@ -5,33 +5,43 @@
 	<title>Gerson Aduviri</title>
 	<link rel="stylesheet" href="css/foundation.min.css">
 	<link rel="stylesheet" href="css/styles.css">
-	<script src="js/foundation.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <div class="header">
-	<ul class="main-nav">
-		<li><a href="#about_mi">Sobre mi</a></li>
-		<li><a href="#intereses">Mis intereses</a></li>
-		<li><a href="#contacto">Contactame</a></li>
-	</ul>
-</div>
+	<div class="content">
+		<ul class="main-nav">
+			<li><a href="#about_mi">Sobre mi</a></li>
+			<li><a href="#intereses">Trabajos</a></li>
+			<li><a href="#contacto">Experiencia</a></li>
+			<li><a href="#contacto">Contactame</a></li>
+		</ul>
+		<div>
+			<div class="profile">
+				<img src="img/avatar.jpg" alt="">
+			</div>
+			<h1>Gerson D. Aduviri</h1>
+			<p>Full Stack Developer</p>
+			<a href="#contacto" class="btn">Contacto</a>
+		</div>
+	</div>
 
-<div class="slider">
-	<h1>Hola!</h1>
-	<p>Soy un desarrollador</p>
 </div>
 
 <div>
 	<div class="row">
-
+		<h1>Sobre mi</h1>
+		<video src="img/kina.mp4" autoplay controls loop muted class="video-test" >
+			Tu navegador no tiene soporte para reproducir videos
+		</video>
 	</div>
 </div>
 
 <div class="photos">
 	<div class="row">
 		<h2>Mis fotos</h2>
+		<a href="#mostrar" class="btn-fotos">Mostrar fotos</a>
 		<ul class="list-photos">
 			<li><a href="https://flic.kr/p/5KrQhy"><img src="https://farm4.staticflickr.com/3065/3117076632_d857a4912e_q.jpg" alt=""></a></li>
 			<li><a href="https://flic.kr/p/67GDYz"><img src="https://farm4.staticflickr.com/3647/3357615045_5c01b6530c_q.jpg" alt=""></a></li>
@@ -51,5 +61,32 @@
 	</defs>
 </svg>
 
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/foundation.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
+<script>
+
+	$(document).ready(init);
+
+	function init()
+	{
+		//inicio de aplicación
+		$(".main-nav a").click(selectMenu);
+	}
+
+	function selectMenu()
+	{
+		//$(".main-nav a").removeClass('active');
+		//$(this).addClass('active');
+
+		TweenMax.to(".main-nav a", 1, {scale:1 , rotation:0 , ease: Elastic.easeOut});
+		TweenMax.to(this, 1, {scale:1.5 , rotation:45 , ease: Back.easeOut});
+	}
+
+</script>
 </body>
 </html>
+
+
+

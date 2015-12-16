@@ -1,19 +1,68 @@
 body
 {
-	background: #CFCFCF;
+	background: #FFFFFF;
+	font-family: OpenSans, sans-serif;
+	font-weight: 100;
+}
+h1, h2, h3, h4
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+}
+h1
+{
+	font-size: 34px;
+}
+.video-test
+{
+	outline: 2px solid #FF0000;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+}
+/**** secciones */
+.btn
+{
+	/* Rectangle 3: */
+	background-image: linear-gradient(-180deg, #64A0FF 0%, #3667B4 100%);
+	border-radius: 4px;
+	padding: 9px 25px;
+	color: #FFF;
 }
 .header
 {
-	background: #000;
+	background: url("../img/bg_photos.jpg");
+	text-align: center;
+	color: #FFF;
+	padding-bottom: 100px;
+	height: 500px;
+	overflow: hidden;
+}
+.header video
+{
+	width: 100%;
+	margin-top: -80px;
+}
+.header .content
+{
+	position: absolute;
+	width: 100%;
+}
+.header h1
+{
+	color: #FFF;
 }
 .main-nav {
-	-webkit-filter: url("#goo");
+	background: rgba(0,0,0,.4);
+	/*-webkit-filter: url("#goo");*/
+	/*-webkit-transform: translateZ(0);*/
 	filter: url("../index.html#goo");
-	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
 	list-style: none;
-	margin: 0;
+	margin: 0 0 80px 0;
 	padding: 0;
+	text-align: center;
+
 }
 .main-nav li
 {
@@ -22,17 +71,21 @@ body
 }
 .main-nav li a
 {
-	padding: 5px 10px;
 	display: block;
-	background: #2c7eb9;
-	color: #ffffff;
-
+	font-size: 20px;
+	color: rgba(243,243,243,0.90);
+	padding: 10px 8px;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+}
+.main-nav li a:hover, .active
+{
+	background: #FF0000;
 }
 
 .slider
 {
 	height: 350px;
-	background: url("https://farm4.staticflickr.com/3344/3173217726_7c44b8e545_b.jpg") center center;
+	/*background: url("https://farm4.staticflickr.com/3344/3173217726_7c44b8e545_b.jpg") center center;*/
 	background-size: cover;
 }
 
@@ -52,6 +105,7 @@ body
 .list-photos li
 {
 	display: inline-block;
+	visibility: hidden;
 }
 
 .list-photos li a img
@@ -62,7 +116,17 @@ body
 	border-radius: 200px;
 }
 
+.profile
+{
+	display: inline-block;
+	border:4px solid #FFF;
+	border-radius: 200px;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+}
 
+/**********/
 @media handheld and (min-width: 200px) {
 	.slider
 	{
