@@ -71,6 +71,7 @@
 	$(document).ready(init);
 
 	var sliderPosX = 0;
+	var anchoSlider = 0;
 
 	function init()
 	{
@@ -81,13 +82,23 @@
 
 	function initSlider()
 	{
-		setInterval(cambiarImagen, 2000);
+		setInterval(cambiarImagen, 4000);
+		anchoSlider = $('.slider li').length * 900;
+		console.log($('.slider li').length);
 	}
 	function cambiarImagen()
 	{
 		console.log('Cambia de imagen');
-		sliderPosX -= 900;
-		$('.slider ul').css('margin-left', sliderPosX +'px');
+
+		if(sliderPosX > -(anchoSlider - 900))
+		{
+			sliderPosX -= 900;
+		}else{
+			sliderPosX = 0;
+		}
+
+		//$('.slider ul').css('margin-left', sliderPosX +'px');
+		TweenMax.to(".slider ul", 3, {marginLeft: sliderPosX +'px', ease: Quart.easeOut});
 	}
 
 	function selectMenu()
