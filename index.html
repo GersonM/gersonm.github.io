@@ -5,7 +5,7 @@
 	<title>Gerson Aduviri</title>
 	<link rel="stylesheet" href="css/foundation.min.css">
 	<link rel="stylesheet" href="css/styles.css">
-	<link href='https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Roboto:400,700,100,300' rel='stylesheet' type='text/css'>
+	<!--<link href='https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Roboto:400,700,100,300' rel='stylesheet' type='text/css'>-->
 </head>
 <body>
 <div class="header">
@@ -40,12 +40,14 @@
 <div class="photos">
 	<div class="row">
 		<h2>Mis fotos</h2>
-		<a href="#mostrar" class="btn-fotos">Mostrar fotos</a>
-		<ul class="list-photos">
-			<li><a href="https://flic.kr/p/5KrQhy"><img src="https://farm4.staticflickr.com/3065/3117076632_d857a4912e_q.jpg" alt=""></a></li>
-			<li><a href="https://flic.kr/p/67GDYz"><img src="https://farm4.staticflickr.com/3647/3357615045_5c01b6530c_q.jpg" alt=""></a></li>
-			<li><a href="https://flic.kr/p/5KrQhy"><img src="https://farm4.staticflickr.com/3065/3117076632_d857a4912e_q.jpg" alt=""></a></li>
-		</ul>
+
+		<div class="slider">
+			<ul>
+				<li><img src="img/banner_1.png" alt="Banner"></li>
+				<li><img src="img/banner_2.png" alt="Banner"></li>
+				<li><img src="img/banner_3.png" alt="Banner"></li>
+			</ul>
+		</div>
 	</div>
 </div>
 
@@ -68,10 +70,24 @@
 
 	$(document).ready(init);
 
+	var sliderPosX = 0;
+
 	function init()
 	{
 		//inicio de aplicación
 		$(".main-nav a").click(selectMenu);
+		initSlider();
+	}
+
+	function initSlider()
+	{
+		setInterval(cambiarImagen, 2000);
+	}
+	function cambiarImagen()
+	{
+		console.log('Cambia de imagen');
+		sliderPosX -= 900;
+		$('.slider ul').css('margin-left', sliderPosX +'px');
 	}
 
 	function selectMenu()
