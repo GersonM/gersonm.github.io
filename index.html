@@ -98,6 +98,8 @@
 		Parse.initialize("5I2wzgofeQj5dcXGKEdeS77MJ3uwMXixefKk8gHI", "tTly4wCBQacqCJ5MEPCbrV3ZO7htcEuMo9NhUJ0e");
 
 
+		//$('.slider ul').css('margin-left', sliderPosX +'px');
+		TweenMax.to(".slider ul", 1, {marginLeft: sliderPosX +'px', ease: Power4.easeInOut});
 	}
 
 	function enviarFormulario(evt)
