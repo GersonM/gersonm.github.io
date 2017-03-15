@@ -34,56 +34,38 @@
 
 	</div>
 
+	<ul id="lista-usuarios"></ul>
+
 </div>
 
-<div>
-	<div class="row">
-		<h1>Sobre mi</h1>
 
-		<div
-			class="fb-like"
-			data-share="true"
-			data-width="450"
-			data-show-faces="true">
-		</div>
-
-		<form id="formRegistro" action="">
-			<input type="text" name="nombre" id="nombre">
-			<input type="text" name="apellido" id="apellido">
-			<button type="submit">Envía</button>
-		</form>
-
-		<video src="img/kina.mp4" autoplay controls loop muted class="video-test" >
-			Tu navegador no tiene soporte para reproducir videos
-		</video>
-	</div>
-</div>
-
-<div class="photos">
-	<div class="row">
-		<h2>Mis fotos</h2>
-
-
-			<ul id="lista">
-				<li class="item"><img width="200" src="img/banner_1.png" alt="Banner"></li>
-				<li class="item"><img width="200" src="img/banner_2.png" alt="Banner"></li>
-			</ul>
-
-
-
-
-
-		</div>
-	</div>
-</div>
-<br><br>
 <br><br>
 <script src="js/jquery-1.11.3.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>-->
-<script src="/socket.io/socket.io.js"></script>
+<script src="http://services.geekadvice.pe:4000/socket.io/socket.io.js"></script>
 
 <script>
-	$(document).ready(init);
+	var socket;
+	window.onload = function () {
+		socket = io.connect('http://services.geekadvice.pe:4000');
+
+		socket.emit('identify', "Daniel");
+
+		socket.on('list_users', function(_users){
+			console.log(_users);
+			drawUsers(_users);
+		});
+	};
+
+	function drawUsers(_users)
+	{
+		var lista = $('#lista-usuarios');
+
+		for(var i in _users)
+		{
+			lista.append('<li>'+ _users[i].name+'</li>');
+		}
+	}
 
 </script>
 </body>
